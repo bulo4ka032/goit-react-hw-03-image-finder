@@ -1,4 +1,5 @@
 import { Image, Message } from './GalleryFallback.styled';
+import PropTypes from 'prop-types';
 
 const GalleryFallback = ({ img, message }) => {
   return (
@@ -10,3 +11,8 @@ const GalleryFallback = ({ img, message }) => {
 };
 
 export default GalleryFallback;
+
+GalleryFallback.propTypes = {
+  img: PropTypes.string.isRequired,
+  message: PropTypes.string.isRequired,
+};
