@@ -55,10 +55,6 @@ export class App extends Component {
     }
   }
 
-  handleSubmit = searchText => {
-    this.setState({ searchText: searchText });
-  };
-
   handleLoadMore = () => {
     this.setState(prevState => ({ page: prevState.page + 1 }));
   };

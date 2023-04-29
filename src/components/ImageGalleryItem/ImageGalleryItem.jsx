@@ -28,11 +28,9 @@ class ImageGalleryItem extends Component {
         />
 
         {isModalOpen && (
-          <Modal
-            modalImg={largeImageURL}
-            tags={tags}
-            closeModal={toggleModal}
-          />
+          <Modal closeModal={toggleModal}>
+            <img src={largeImageURL} alt={tags} />
+          </Modal>
         )}
       </ImageContainer>
     );

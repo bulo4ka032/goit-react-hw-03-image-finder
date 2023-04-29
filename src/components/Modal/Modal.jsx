@@ -21,14 +21,16 @@ class Modal extends Component {
     this.props.closeModal();
   };
 
-  render() {
-    const { closeModal, modalImg, tags } = this.props;
+  onBackdropClick = evt => {
+    if (evt.currentTarget === evt.target) {
+      this.props.closeModal();
+    }
+  };
 
+  render() {
     return createPortal(
-      <Overlay onClick={closeModal}>
-        <ModalWindow>
-          <img src={modalImg} alt={tags} />
-        </ModalWindow>
+      <Overlay onClick={this.onBackdropClick}>
+        <ModalWindow>{this.props.children}</ModalWindow>
       </Overlay>,
       modalRoot
     );
